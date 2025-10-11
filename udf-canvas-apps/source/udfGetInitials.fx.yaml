@@ -1,0 +1,4 @@
+// Retrieves the initials from a given display name.
+// Usage - udfGetInitials('John Doe');
+
+udfGetInitials('Display Name': Text): Text = Concat(FirstN(Split('Display Name', " "), 2), Left(Value, 1));

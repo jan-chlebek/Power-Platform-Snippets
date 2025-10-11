@@ -1,0 +1,4 @@
+// Retrieves the result of a safe division operation, returning 0 if the denominator is zero or operation fails.
+// Usage - udfSafeDivision(10, 0);
+
+udfSafeDivision(Numerator: Number, Denominator: Number): Number = IfError(Numerator / Denominator, 0);

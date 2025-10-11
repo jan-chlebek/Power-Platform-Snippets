@@ -1,0 +1,7 @@
+// Retrieves the value of an environment variable by its schema name either from the overridden values or the default value if not overridden.
+// Usage - udfGetEnvironmentVariable('MyVariableSchemaName');
+
+udfGetEnvironmentVariable('Schema Name': Text):Text = IfError(Coalesce(
+    LookUp('Environment Variable Values', 'Schema Name' = 'Schema Name', Value),
+    LookUp('Environment Variable Definitions', 'Schema Name' = 'Schema Name', 'Default Value')
+), Blank());

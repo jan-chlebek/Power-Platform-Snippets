@@ -1,0 +1,4 @@
+// Retrieves a boolean indicating if the app is currently being edited in Power Apps Studio.
+// Usage - fmIsStudioMode;
+
+fmIsStudioMode = StartsWith(Host.Version, "PowerApps-Studio");
