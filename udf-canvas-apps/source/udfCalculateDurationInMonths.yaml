@@ -1,0 +1,23 @@
+// -----------------------------------------------------------
+// udfCalculateDurationInMonths
+// Calculates the duration between two dates in fractional months
+// Example: 2024-01-15 to 2024-02-10 → 0.84 months
+// Result is rounded to 2 decimal places
+// -----------------------------------------------------------
+
+// -----------------------------------------------------------
+// udfCalculateDurationInMonths
+// Calculates the duration between two dates in fractional months
+// Example: 2024-01-15 to 2024-02-10 → 0.84 months
+// Result is rounded to 2 decimal places
+// -----------------------------------------------------------
+
+udfCalculateDurationInMonths(
+    _StartDate: DateTime,
+    _EndDate: DateTime
+): Number = Round(
+    DateDiff(_StartDate, _EndDate, TimeUnit.Months) -
+        DateDiff(Date(Year(_StartDate), Month(_StartDate), 1), _StartDate, TimeUnit.Days) / Day(DateAdd(DateAdd(Date(Year(_StartDate), Month(_StartDate),1),1, TimeUnit.Months),-1, TimeUnit.Days)) +
+        DateDiff(Date(Year(_EndDate), Month(_EndDate), 1), _EndDate, TimeUnit.Days) / Day(DateAdd(DateAdd(Date(Year(_EndDate), Month(_EndDate),1),1, TimeUnit.Months),-1, TimeUnit.Days)),
+    2
+);
