@@ -1,7 +1,10 @@
 // -----------------------------------------------------------
 // udfCalculateDurationInMonths
 // Calculates the duration between two dates in fractional months
-// Example: 2024-01-15 to 2024-02-10 → 0.84 months
+// Example: 2026-02-01 → 2026-02-08 (1 week from 28-day month) = 0.25
+// Example: 2026-03-01 → 2026-02-08 (1 week from 31-day month) = 0.23
+// Example: 2026-02-01 → 2026-02-15 (2 weeks from 28-day month) = 0.5
+// Example: 2026-02-01 → 2026-03-02 (full month and 1 day from 31-day month) = 1.03
 // Result is rounded to 2 decimal places
 // -----------------------------------------------------------
 
